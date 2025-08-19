@@ -44,8 +44,8 @@ user-details.component.html # User Details template
 ## ⚙️ Installation & Setup
 
 1. Clone the repository:
-   git clone <your-repo-url>
-   cd user-management-app
+   git clone https://github.com/Sachin-Oj/UserManagementApp/tree/main
+   cd user-management
 
 Install dependencies:
 npm install
