@@ -55,17 +55,15 @@ ng s --o
 
 📖 Usage
 Navigate to /users → view user list.
+
 Click Edit → modify fields (except id).
+
 Click Save → exit edit mode.
+
 Click on any row → navigate to /users/:id and view user details.
+
 Use Back button in User Details to return to list.
 
-
-Improvements / TODO
-🔄 Connect with real API (currently mocked service).
-🗑️ Add delete functionality.
-➕ Add create new user form.
-✅ Unit tests & e2e tests.
 
 👤 Author
 Sachin Ojha
