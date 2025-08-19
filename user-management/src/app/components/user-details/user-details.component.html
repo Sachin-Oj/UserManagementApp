@@ -1,0 +1,34 @@
+<div class="d-flex justify-content-center align-items-center vh-100" *ngIf="user; else notFound">
+    <div class="card shadow p-4 d-flex flex-column" style="width: 1600px;min-height: 600px;">
+        <h2 class="card-title fw-bold fs-2 mb-4 text-center">User Details</h2>
+  
+      <div *ngFor="let key of objectKeys(user!)" class="row mb-2">
+        <div class="col-4 fw-bold text-capitalize fs-4">
+          {{ key }}:
+        </div>
+        <div class="col-8 fs-4">
+          {{ user![key] }}
+        </div>
+      </div>
+  
+      <div class="mt-auto d-flex justify-content-center">
+        <button routerLink="/users" class="btn btn-primary w-25">
+          Back
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  <ng-template #notFound>
+    <div class="container mt-4">
+      <div class="card shadow p-4 d-flex flex-column">
+        <p class="text-danger mb-3">User not found</p>
+        <div class="mt-auto d-flex justify-content-center">
+          <button routerLink="/users" class="btn btn-primary w-25">
+            Back
+          </button>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+  

@@ -1,0 +1,39 @@
+<div class="p-4">
+    <h2 class="card-title fw-bold fs-2 mb-4 text-center">User List</h2>
+    <table class="table-auto w-full border-collapse border border-gray-300">
+      <thead>
+        <tr class="bg-gray-600 text-white">
+          <th *ngFor="let header of headers" class="border p-2 text-left">
+            {{ header | titlecase }}
+          </th>
+          <th class="border p-2 text-left">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="let user of users; let i = index"
+          class="cursor-pointer hover:bg-gray-100"
+          (click)="goToDetails(i)"
+          
+        >
+          <td *ngFor="let header of headers" class="border p-2" (click)="goToDetails(i)">
+            <input
+              [(ngModel)]="user[header]"
+              class="w-full border-none outline-none bg-transparent"
+              [disabled]="header === 'id' || !isRowInEdit(i)" 
+            />
+          </td>
+          <td class="border p-2 text-center">
+            <button
+              class="px-3 py-1 rounded text-white"
+              [ngClass]="isRowInEdit(i) ? 'bg-green-600' : 'bg-blue-600'"
+              (click)="toggleEdit(i); $event.stopPropagation()"
+            >
+              {{ isRowInEdit(i) ? 'Save' : 'Edit' }}
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
